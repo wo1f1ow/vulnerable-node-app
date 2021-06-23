@@ -84,6 +84,6 @@ jobs:
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       with:
         task-definition: ${{ steps.task-def.outputs.task-definition }}
-        service: vvuln-node-app-service
+        service: vuln-node-app-service
         cluster: vuln-node-app
         wait-for-service-stability: true
