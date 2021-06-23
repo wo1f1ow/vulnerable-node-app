@@ -1,0 +1,33 @@
+{
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "containerDefinitions": [
+        {
+            "name": "vuln-node-app",
+            "image": "873669348008.dkr.ecr.eu-central-1.amazonaws.com/vuln-node-app",
+            "essential": true,
+            "portMappings": [
+                {
+                    "containerPort": 8080,
+                    "hostPort": 8080,
+                    "protocol": "tcp"
+                }
+            ],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/vuln-node-app",
+                    "awslogs-region": "eu-central-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            },
+            "essential": true
+        }
+    ],
+    "networkMode": "awsvpc",
+    "memory": "2048",
+    "cpu": "512",
+    "executionRoleArn": "arn:aws:iam::873669348008:role/ecsTaskExecutionRole",
+    "family": "vuln-node-app"
+}
