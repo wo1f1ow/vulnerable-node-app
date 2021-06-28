@@ -18,7 +18,7 @@ jobs:
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: '873669348008.dkr.ecr.eu-central-1.amazonaws.com/vuln-node-app:latest:${{ github.sha }}'
+          image-ref: '873669348008.dkr.ecr.eu-central-1.amazonaws.com/vuln-node-app:latest
           format: 'template'
           template: '@/contrib/sarif.tpl'
           output: 'trivy-results.sarif'
