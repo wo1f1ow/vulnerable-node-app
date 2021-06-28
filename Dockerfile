@@ -1,6 +1,5 @@
 # This image does not contain the common packages contained in the default tag and only contains the minimal packages needed to run node.
 FROM node:slim
-MAINTAINER Riyaz Walikar <riyaz@appsecco.com>
 
 RUN mkdir -p /usr/src/app
 RUN npm install -g pm2
