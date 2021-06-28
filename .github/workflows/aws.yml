@@ -38,14 +38,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    
-    - name: Prepare code scan
-      run: |
-        docker pull guardrails/phpcs-security-audit:latest
-    
-    - name: Scan code
-      run: |
-        docker run -t -v${GITHUB_WORKSPACE}:/opt/mount guardrails/phpcs-security-audit:latest
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
