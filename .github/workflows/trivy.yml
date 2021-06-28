@@ -1,9 +1,12 @@
 name: trivy
+
+# Only trigger, when the build workflow succeeded
 on:
-  push:
-    branches:
-      - main
-  pull_request:
+  workflow_run:
+    workflows: ["Deploy to Amazon ECS"]
+    types:
+      - completed
+      
 jobs:
   build:
     name: Build
